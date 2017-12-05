@@ -1,8 +1,7 @@
 <h1>About Page</h1>
 <div>{{vm.message}} </div>
 <input type="int" ng-model="vm.newCar.year" placeholder="year">
-<select ng-model="vm.newCar.company_id" ng-options="company.id as company.name for company in vm.companies.list track by company.id"
-    ng-model="selected"></select>
+<select ng-model="vm.newCar.company_id" ng-options="company.id as company.name for company in vm.companies.list track by company.id"></select>
 <input type="text" ng-model="vm.newCar.model" placeholder="name">
 <input type="text" ng-model="vm.newCar.nickname" placeholder="nickname">
 <button ng-click="vm.addNewCar(vm.newCar)">Add New Car</button>
@@ -21,7 +20,7 @@
         <td>{{car.model}}</td>
         <td>{{car.nickname}}</td>
         <td>{{car.country}}</td>
-        <td></td>
+        <td><button ng-click="vm.deleteCar(car)">Delete</button></td>
     </tr>
 
 </table>

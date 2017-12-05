@@ -26,6 +26,17 @@ app.service('CarsService', ['$http', function($http){
             self.getCars();
         });
     }
+
+    self.deleteCar = function(carToDelete) {
+        console.log(carToDelete)
+        $http ({
+            method: 'DELETE',
+            url: '/cars/'+carToDelete.id
+        }).then(function(response) {
+            console.log('response'+response)
+            self.getCars();
+        });
+    };
    
     self.getCars();
 }])
